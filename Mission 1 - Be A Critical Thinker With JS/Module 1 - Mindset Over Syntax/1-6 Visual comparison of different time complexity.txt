@@ -1,0 +1,56 @@
+ALWAYS FIND OUT FOR WORST CASE SCENARIO!!
+When Im increasing data, is it affecting the algorithm. Is the time increasing if so, How much increasing
+
+
+------------
+[1,2,3,4,5,6]
+
+for () {
+    ----      -> for this loop generally -> O(n)
+}
+
+arr.map, arr.forEach, arr.find -> O(n)
+
+
+
+
+---------------
+for () {
+   
+   for () {
+    ----      -> for this loop -> O(n2)
+	}
+
+}
+
+
+
+-------------
+arr -> [1,2,3,4,5,6,7,8]
+
+arr[2] -> 3   -> for this loop -> O(1)
+Similar for getting attribute value from an object
+
+
+
+
+
+-------------
+for () {
+    ----      
+}				-> for this loop -> O(n)   [n+m = n kinda same]
+for () {
+    ----      
+}
+
+
+
+
+-------------
+for (let i = 0 , i < 5, i++) {
+    ----        -> for this loop -> O(1) because  only 5 times the loop will run
+}
+O(3),O(5),O(10) > O(1)
+
+
+

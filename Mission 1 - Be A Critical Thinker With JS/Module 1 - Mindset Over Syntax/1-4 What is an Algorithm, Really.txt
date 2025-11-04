@@ -1,0 +1,7 @@
+Particular set of instruction for particular task
+
+Well Established Algorithm. or certain change in them
+
+Searching and Sorting.
+
+Big O Notation

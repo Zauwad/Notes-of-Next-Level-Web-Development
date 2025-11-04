@@ -1,0 +1,19 @@
+Top Down Approach 
+
+Break Into Smaller Pieces.
+
+Not to follow assumptions without talking
+
+Properly Plan Out
+
+Input Phase
+Processing Phase
+Output
+
+EFFICIENT WAY
+Data Structure
+Algorithm
+Big O Notation
+
+
+DSA!!

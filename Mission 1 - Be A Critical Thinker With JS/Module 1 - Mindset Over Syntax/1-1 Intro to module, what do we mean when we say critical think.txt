@@ -1,0 +1,12 @@
+Know About the Tools. 
+
+Properly Decompose
+
+Which problems can arise -> Test/Edge Case Identification
+
+For which purpose Which will it be used
+
+
+
+WHOLE SYSTEM AS BIGGER PICTURE
+

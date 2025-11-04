@@ -1,0 +1,22 @@
+Time and Space -> Measure
+
+Time and Space Complexity
+
+O(n)
+O(n2)
+O(logn)
+O(nlogn)
+O(1)
+
+Have to keep in mind --> Time Complexity for now since space complexity is not a big issue now ( devices improved over the years ) 
+AS a webdev time complexity much big issue
+
+
+
+Big-O -> Not time specific. WILL ALWAYS FIND OUT FOR WORST CASE SCENARIO FOR ALGORITHM
+
+
+Linear -> straight line -> O(n)
+Constant -> O(1) -> MOST EFFICIENT!!
+O(n2) -> Close to worst
+O(n!) -> THE WORST!!!
