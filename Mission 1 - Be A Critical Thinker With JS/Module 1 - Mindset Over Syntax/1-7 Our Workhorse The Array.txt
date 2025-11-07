@@ -1,0 +1,29 @@
+------------
+[1,2,3,4,5,6]
+
+for () {
+    ----      -> for this loop generally -> O(n)
+}			  -> The more elements in array the more time increases
+
+Big-O -> Always take account for worst case scenario. 
+
+
+
+push, pop -> O(1) -> Because there is no loop here. Push function pushes a element at the end 
+					and pop does vice varsa
+					
+Array[index] -> O(1) -> Because I'm getting a specific value; A one time action.  
+
+
+
+
+
+shift, unshift -> O(n) -> Because unshift moves each element from first toward last,  		
+							while adding another index at the end. Then places the value at the 
+							start. So it works on each element. So O(n). Same goes for shift
+Foreach, Map   -> O(n) -> Same reason
+
+Array.find(), Array.includes -> O(n) -> Because it finds the element by going through each element of the array. 
+							
+							
+O(n) -> Is linear
