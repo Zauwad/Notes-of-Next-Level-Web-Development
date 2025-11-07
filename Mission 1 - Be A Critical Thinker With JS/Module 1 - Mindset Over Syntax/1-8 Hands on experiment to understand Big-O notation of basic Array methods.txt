@@ -1,0 +1,150 @@
+ Here’s a **well-structured note** on your code, clearly explaining each section, Big O concepts, and what’s being tested:
+
+---
+
+# **Time Complexity & Performance Testing in JavaScript**
+
+---
+
+## **1. Concept: Linear Time — O(n)**
+
+When the time taken by an algorithm increases **linearly** with the size of the input, it’s said to have **O(n)** time complexity.
+For example:
+
+```js
+for (let i = 0; i <= n; i++) { ... }
+```
+
+Here, the loop runs `n` times, so if `n` doubles, the execution time roughly doubles — hence **O(n)**.
+
+---
+
+## **2. Measuring Execution Time in JavaScript**
+
+There are **two main methods** to measure how long a piece of code takes to run:
+
+### **(a) Using `performance.now()`**
+
+```js
+let startTime = performance.now();
+for (let i = 0; i <= 5000; i++) {
+    console.log(i);
+}
+let endTime = performance.now();
+console.log(`Total Time Took -> ${endTime - startTime}ms`);
+```
+
+* `performance.now()` gives a high-resolution timestamp (in milliseconds).
+* Useful for precise time measurement of specific operations.
+
+---
+
+### **(b) Using `console.time()` and `console.timeEnd()`**
+
+```js
+console.time("task");
+for (let i = 0; i <= 5000; i++) {
+    console.log(i);
+}
+console.timeEnd("task");
+```
+
+* Easier to use for quick performance profiling.
+* Automatically logs the time difference with a label (`"task"`).
+
+---
+
+## **3. Array Creation and Testing Setup**
+
+```js
+let firstArray = [];
+let secondArray = [];
+
+for (let i = 0; i < 600000; i++) {
+    if (i < 300000) {
+        firstArray.push(i);
+    }
+    secondArray.push(i);
+}
+```
+
+* `firstArray` → 300,000 elements
+* `secondArray` → 600,000 elements
+  Used to compare how different operations scale with array size.
+
+---
+
+## **4. Testing `.map()` — O(n)**
+
+```js
+console.time('map1');
+const firstUserList = firstArray.map((number) => ({ userId: number }));
+console.timeEnd('map1');
+
+console.time('map2');
+const secondUserList = secondArray.map((number) => ({ userId: number }));
+console.timeEnd('map2');
+```
+
+### **Explanation**
+
+* `.map()` iterates through every element of the array once → **O(n)**.
+* Execution time doubles approximately when the array size doubles.
+
+### **Note on Syntax**
+
+> The parentheses around `({ userId: number })` are required to return an object literal directly from an arrow function.
+> Without them, JavaScript interprets `{}` as a function block, not an object.
+
+---
+
+## **5. Testing `.find()` — O(n)**
+
+```js
+console.time('find');
+const user = secondUserList.find((userObj) => userObj.userId === 500000);
+console.timeEnd('find');
+```
+
+* `.find()` checks each element sequentially until it matches.
+* Worst case: the target is near the end → **O(n)** time complexity.
+* As the array size increases, search time increases **linearly**.
+
+---
+
+## **6. Testing Array Indexing — O(1)**
+
+```js
+console.time('indexing');
+const user2 = secondUserList[500000];
+console.timeEnd('indexing');
+```
+
+* Direct indexing in arrays is **constant time** — **O(1)**.
+* Access time does **not** depend on the array’s length.
+
+---
+
+## **7. Summary Table**
+
+| Operation           | Example Code                       | Time Complexity | Description                           |
+| ------------------- | ---------------------------------- | --------------- | ------------------------------------- |
+| For Loop            | `for (let i=0; i<n; i++)`          | O(n)            | Linear growth                         |
+| `Array.map()`       | `arr.map(x => f(x))`               | O(n)            | Processes all elements                |
+| `Array.find()`      | `arr.find(x => condition)`         | O(n)            | Checks each element until match found |
+| Array Indexing      | `arr[i]`                           | O(1)            | Instant access by index               |
+| `performance.now()` | `performance.now()`                | —               | High-resolution timing                |
+| `console.time()`    | `console.time()/console.timeEnd()` | —               | Quick performance measurement         |
+
+---
+
+## **8. Key Takeaways**
+
+* **O(n)** → Execution time grows linearly with input size.
+* **O(1)** → Constant time operations, unaffected by input size.
+* Use `performance.now()` for **precise benchmarking** and `console.time()` for **quick tests**.
+* **Arrow function with object return** must wrap the object in parentheses.
+* Measuring performance helps understand **algorithm efficiency** in real-world applications.
+
+---
+
