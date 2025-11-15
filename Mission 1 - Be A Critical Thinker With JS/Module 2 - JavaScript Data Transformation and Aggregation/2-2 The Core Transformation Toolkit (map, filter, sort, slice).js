@@ -80,15 +80,17 @@ const rawApiData = [{
         stock: 300
     }
 ];
-
 // * Want to get top 3 electronics
 // ? Output => [{name: 'phone'}, {name: 'Smart Watch'}]
+
+
 
 // * Process
 // Todo filter => Electronics
 // Todo sort => by rating
 // Todo slice => First 3 (TOP 3)
 // Todo map => according to desired output
+
 
 
 // *Lets create a pipeline of methods now
@@ -99,8 +101,5 @@ const topElectronicProducts = rawApiData.filter(element => element.category === 
                                         // //.map(item => {
                                         ////     return {name: item.name} -> Have to return like this for map method. Otherwise use oneliner
                                         //// })
-                                        //! Returns an array each of them methods
-
-
-
+                                        //! each of them methods -> Returns an array
 console.log(topElectronicProducts)
