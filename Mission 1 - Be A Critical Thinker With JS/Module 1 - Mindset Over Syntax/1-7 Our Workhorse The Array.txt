@@ -21,7 +21,7 @@ Array[index] -> O(1) -> Because I'm getting a specific value; A one time action.
 shift, unshift -> O(n) -> Because unshift moves each element from first toward last,  		
 							while adding another index at the end. Then places the value at the 
 							start. So it works on each element. So O(n). Same goes for shift
-Foreach, Map   -> O(n) -> Same reason
+Foreach, Map, filter   -> O(n) -> Same reason
 
 Array.find(), Array.includes -> O(n) -> Because it finds the element by going through each element of the array. 
 							
