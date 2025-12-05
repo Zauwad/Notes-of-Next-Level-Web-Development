@@ -4,7 +4,7 @@
 // USER REQUEST QUEUE
 
 // ENQUEUE ->  adds in last 
-// DEQUEUE -> pops the first one rather than last. WIl have to move right ones to left
+// DEQUEUE -> pops the first one rather than last. Will have to move right ones to left
 // PEEK -> Will peek the first one rather than last.
 
 // Quick shift overview
@@ -14,7 +14,7 @@
 // console.log(fruits);     // ["Orange", "Apple", "Mango"]
 
 
-//Using Array 
+// We'll implement Queue using arrays for simplicity. Queue, stack and other cant be implemented by arrays.
 class Queue {
     constructor() {
         this.items = []
