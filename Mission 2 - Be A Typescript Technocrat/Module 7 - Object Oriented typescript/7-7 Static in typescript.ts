@@ -1,6 +1,6 @@
 class Counter {
     // count = 0  //! Value set already, so no constructor needed
-    static count = 0   //! Now value wont change for different objects. Has to access using 'Counter.count'
+    static count = 0   //! Now value wont change for different objects/instances. Has to access using 'Counter.count'
 
     increment() {
         // this.count += 1
