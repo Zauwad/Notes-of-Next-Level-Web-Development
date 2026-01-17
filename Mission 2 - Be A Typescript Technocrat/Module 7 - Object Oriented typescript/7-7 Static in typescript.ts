@@ -6,7 +6,7 @@ class Counter {
         // this.count += 1
         Counter.count += 1
 
-        // console.log(this.count)
+        // console.log(this.count)w 
         console.log(Counter.count)
     }
     static decrement() {    //! STATIC METHOD

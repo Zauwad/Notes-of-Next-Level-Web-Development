@@ -1,3 +1,5 @@
+//! LEARNED IN ACCESS MODIFIER BEFORE!!
+
 class BankAccount {
     public readonly userId: number; //! This cant be changed later on
     public userName: string;        //! fwi -> Public is set as default, no need to define public 

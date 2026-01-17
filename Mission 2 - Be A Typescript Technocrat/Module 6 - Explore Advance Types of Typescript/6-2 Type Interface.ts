@@ -45,7 +45,7 @@ const user4: IUserRole = {
 // ! Arrays
 type Friends = string[]
 const friends: Friends = ['Karim', 'Rahim', 'Fahim']
-
+//* Now doing the same above with interface
 interface IFriends { //! Friends type written using interface    //! Complex
     [index: number]: string   //! ARRAY IS A SPECIAL OBJECT
 }
@@ -55,7 +55,7 @@ const friends2: IFriends = ['Karim2', 'Rahim2', 'Fahim2']
 // ! Functions
 type Add = (num1: number, num2: number) => number
 const add1: Add = (num1, num2) => num1 + num2
-
+//* Now doing the same above with interface
 interface Iadd { //! Add type written using interface   //! Complex
     (num1: number, num2: number): number  //! FUNCTIONS ALSO A SPECIAL OBJECT
 }
