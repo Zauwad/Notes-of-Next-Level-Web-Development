@@ -1,0 +1,53 @@
+//! If I console error instead of console log will the code after error not run?
+
+No, using `console.error()` will **not stop your code from running**. It behaves just like `console.log()` in terms of execution flow—the difference is only in *where* the output goes:
+
+- **`console.log()`** writes to **stdout** (standard output).
+- **`console.error()`** writes to **stderr** (standard error).  
+
+Both will display messages in the console, but errors are often styled differently (e.g., red text in browsers) and can be redirected separately in environments like Node.js. For example, you might send logs to one file and errors to another.  
+
+If you want code execution to actually stop, you’d need to throw an error with `throw new Error("message")` or let an exception occur naturally. `console.error()` alone is just a logging method—it doesn’t affect control flow.
+
+Would you like me to show you a quick example comparing `console.error()` vs `throw new Error()` so you can see the difference in how execution continues or halts?
+
+
+
+
+
+
+//! try catch more safe?
+Yes—using **try/catch** is generally safer when you expect something might throw an error. Here’s why:
+
+### Why try/catch is safer
+- **Without try/catch**: If you `throw new Error("...")` and don’t handle it, your program will stop at that point.
+- **With try/catch**: You can gracefully handle the error, log it (with `console.error()` if you want), and then decide whether to continue execution, retry, or exit.
+
+### Example
+```js
+// Without try/catch
+console.log("Before error");
+throw new Error("Something went wrong");
+console.log("After error"); // ❌ never runs
+```
+
+```js
+// With try/catch
+try {
+  console.log("Before error");
+  throw new Error("Something went wrong");
+  console.log("After error"); // ❌ skipped
+} catch (err) {
+  console.error("Caught error:", err.message);
+}
+console.log("Code continues safely"); // ✅ runs
+```
+
+### Key difference
+- `console.error()` → just logs, doesn’t stop execution.
+- `throw new Error()` → stops execution unless caught.
+- `try/catch` → lets you recover and keep control of the flow.
+
+So yes, wrapping risky code in `try/catch` is safer because it prevents your whole program from crashing unexpectedly.  
+
+Do you want me to show you a **pattern for safe logging** where you combine `try/catch` with `console.error()` so you get both error visibility and continued execution?
